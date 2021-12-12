@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Quizzical Trivia App (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+A travel journal app created with React using the create-react-app(CRA) npm command.
 
-In the project directory, you can run:
+### The challenge
+- Create a card component for each card
+- Pass props to each component
+- Style and polish the app as in the Figma design
 
-### `npm start`
+### Screenshot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Start Screen](https://user-images.githubusercontent.com/84665360/145670761-bebd9130-ea1f-4dea-9f38-e4fd3aed1c64.png)
+![Quiz Screen](https://user-images.githubusercontent.com/84665360/145670794-dc8b761f-29e8-4d70-b779-6ddc988cd5b6.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Links
 
-### `npm run build`
+- [Live App Demo](https://zaidmarrie.github.io/travel-journal/)
+- [Source Code](https://github.com/ZaidMarrie/travel-journal)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## My Process
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built with
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- HTML
+- CSS
+- JavaScript
+- React (create-react-app)
 
-### `npm run eject`
+### What I learned
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I learned and practiced the following concepts:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React Props
+- React State
+- Conditional Rendering
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**A snippet of the code I used**
+```javascript
+import React from 'react'
+import pindropIcon from './img/pindrop.png'
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+function Card(props) {
+    console.log(props)
+    return (
+        <div className='card flex'>
+            <div className='card__img'>
+                <img src={props.item.imageUrl} alt={props.item.title} />
+            </div>
+            <div className='card__content'>
+                <div className='location flex'>
+                    <img src={pindropIcon} alt='pindrop icon' className='pindrop-icon' />
+                    <p className='location__country'>{props.item.location}</p>
+                    <a href={props.item.googleMapsUrl} className='location__url'>View on Google Maps</a>
+                </div>
+                <h2 className='card__title'>{props.item.title}</h2>
+                <p className='card__date'>{props.item.startDate} - {props.item.endDate}</p>
+                <p className='card__desc'>{props.item.description}</p>
+            </div>
+        </div>
+    )
+}
 
-## Learn More
+export default Card
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github - [@ZaidMarrie](https://github.com/ZaidMarrie)
+- Twitter - [@LeKoels27](https://twitter.com/LeKoels27)
 
-### Code Splitting
+## Contributing
+Pull requests are very welcome and you may freely fork this repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Supporting Scrimba
 
-### Analyzing the Bundle Size
+Since 2017, scrimba has created over 20 free courses and continue's launching free courses. If you perhaps are interested in learning or maybe just would like to up your skills try out their courses at [scrimba.com](www.scrimba.com).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Become a professional React developer](https://scrimba.com/course/greact)
+- [The Responsive Web Design Bootcamp](https://scrimba.com/course/gresponsive)
+- [The Ultimate JavaScript Bootcamp](https://scrimba.com/course/gjavascript)  
 
-### Making a Progressive Web App
+Happy Coding!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
